@@ -1,0 +1,22 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import index from '../views/index.vue'
+
+const router = createRouter({
+  routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: index
+    },
+    {
+      path: '/gameInfo',
+      name: 'gameInfo',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/GameInfo/gameInfo.vue')
+    }
+  ]
+})
+
+export default router
